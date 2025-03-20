@@ -1,0 +1,36 @@
+.favorites-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .pokemon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .favorite-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .favorite-button:hover {
+    background-color: #e64a19;
+  }
+  
+  @media (max-width: 600px) {
+    .pokemon-grid {
+      flex-direction: column;
+    }
+  
+    .pokemon-card {
+      width: 100%;
+    }
+  }
+  
