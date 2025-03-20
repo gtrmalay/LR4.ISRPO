@@ -7,6 +7,7 @@ import "./Home.css";
 function Home() {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const fetchPokemons = async () => {
     try {
@@ -29,6 +30,11 @@ function Home() {
     fetchPokemons();
   }, []);
 
+  // Фильтрация покемонов по запросу поиска
+  const filteredPokemons = pokemons.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="home">
       <h1>Список покемонов</h1>
@@ -38,13 +44,26 @@ function Home() {
         Перейти в избранное
       </Link>
 
+      {/* Поле поиска */}
+      <input
+        type="text"
+        className="search-bar"
+        placeholder="Поиск покемонов..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+
       {loading ? (
         <p>Загрузка...</p>
       ) : (
         <div className="pokemon-grid">
-          {pokemons.map((pokemon) => (
-            <PokemonCard key={pokemon.id} pokemon={pokemon} />
-          ))}
+          {filteredPokemons.length === 0 ? (
+            <p>Покемоны не найдены</p>
+          ) : (
+            filteredPokemons.map((pokemon) => (
+              <PokemonCard key={pokemon.id} pokemon={pokemon} />
+            ))
+          )}
         </div>
       )}
     </div>

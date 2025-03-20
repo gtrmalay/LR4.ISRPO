@@ -1,31 +1,45 @@
 .pokemon-details {
-    text-align: center;
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .back-button {
-    display: inline-block;
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .back-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .pokemon-image {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 20px;
-  }
-  
-  .pokemon-details p {
-    font-size: 1.2rem;
-    margin: 10px 0;
-  }
+  text-align: center;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f8f9fa, #e3e7eb);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #0056b3, #004099);
+  transform: scale(1.05);
+}
+
+.pokemon-image {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.pokemon-image:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+
+.pokemon-details p {
+  font-size: 1.2rem;
+  margin: 12px 0;
+  color: #333;
+  font-weight: 500;
+}

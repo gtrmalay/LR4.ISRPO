@@ -1,36 +1,102 @@
 .favorites-page {
-    text-align: center;
-    padding: 20px;
-  }
-  
+  text-align: center;
+  padding: 20px;
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pokemon-card {
+  background: linear-gradient(135deg, #fff5f5, #ffe0e0);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+  max-width: 220px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Центрируем содержимое карточки */
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.pokemon-image {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+  display: block; /* Это важно для выравнивания */
+  margin-left: auto; /* Центрируем изображение по горизонтали */
+  margin-right: auto; /* Центрируем изображение по горизонтали */
+}
+
+.favorite-button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 14px;
+  background-color: #ff3b3b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.favorite-button:hover {
+  background-color: #d63030;
+}
+
+@media (max-width: 600px) {
   .pokemon-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    grid-template-columns: 1fr;
   }
-  
+
+  .pokemon-card {
+    width: 90%;
+  }
+
   .favorite-button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #ff5722;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    width: 100%;
+    padding: 12px;
   }
-  
-  .favorite-button:hover {
-    background-color: #e64a19;
-  }
-  
-  @media (max-width: 600px) {
-    .pokemon-grid {
-      flex-direction: column;
-    }
-  
-    .pokemon-card {
-      width: 100%;
-    }
-  }
-  
+}
+
+.favorites-link.back-to-home {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff3b3b;
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.favorites-link.back-to-home:hover {
+  background: linear-gradient(135deg, #f9776d, #f9625d);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.favorites-link.back-to-home:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.7);
+}
+
+.favorites-link.back-to-home:active {
+  transform: translateY(1px);
+}
